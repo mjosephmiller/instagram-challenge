@@ -33,13 +33,45 @@ feature 'posts' do
 
   context 'viewing restaurants' do
 
-  let!(:lll){Picture.create(caption:'Live, Laugh, Love')}
+  let!(:lll){Picture.create(caption:'Live, Laugh, Love', image:File.new('app/assets/images/duck.jpeg'))}
 
     scenario 'lets a user view a picture' do
       visit '/pictures'
       click_link 'Live, Laugh, Love'
       expect(page).to have_content 'Live, Laugh, Love'
+      # expect(page).to have_css("a[href$='.jpeg']")
       expect(current_path).to eq "/pictures/#{lll.id}"
+    end
+
+  end
+
+  context "editing a picture's caption" do
+
+    before { Picture.create caption: 'Summer Daze', tag_list: 'AboutDatLyfe' }
+
+    scenario 'let a user edit a picture' do
+     visit '/pictures'
+     click_link 'Summer Daze'
+     click_link 'Edit Summer Daze'
+     fill_in 'Caption', with: "Life is a beach and I'm just playing in the sand"
+     click_button 'Update Picture'
+     expect(page).to have_content 'Life is a beach'
+     expect(page).not_to have_content 'Summer Daze'
+     expect(current_path).to eq '/pictures'
+    end
+
+  end
+
+  context 'deleting restaurants' do
+
+    before { Picture.create caption: 'Beach Lyf', tag_list: 'Living, Laughing, Loving, Thriving' }
+
+    scenario 'removes a picture when a user clicks a delete link' do
+      visit '/pictures'
+      click_link 'Beach Lyf'
+      click_link 'Delete Beach Lyf'
+      expect(page).not_to have_content 'Beach Lyf'
+      expect(page).to have_content 'Picture deleted'
     end
 
   end

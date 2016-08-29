@@ -1,3 +1,8 @@
+%p= @picture.location
+= image_tag @picture.image.url(:medium)
 %p= @picture.caption
+Tags:
+%p= @picture.tag_list
 
-= image_tag @picture.image.url(:thumb)
+= link_to "Edit #{@picture.caption}", edit_picture_path(@picture)
+= link_to "Delete #{@picture.caption}", picture_path(@picture), method: :delete

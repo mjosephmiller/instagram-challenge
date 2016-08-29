@@ -7,6 +7,7 @@ end
 
 gem 'pry'
 gem 'paperclip'
+gem 'acts-as-taggable-on', '~> 4.0'
 
 gem 'haml'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
