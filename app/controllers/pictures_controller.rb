@@ -16,7 +16,6 @@ class PicturesController < ApplicationController
       render 'new'
     end
   end
-  
 
   def show
     @picture = Picture.find(params[:id])

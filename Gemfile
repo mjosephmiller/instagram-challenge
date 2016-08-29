@@ -10,7 +10,7 @@ end
 gem 'pry'
 gem 'paperclip'
 gem 'acts-as-taggable-on', '~> 4.0'
-
+gem 'devise'
 gem 'haml'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
