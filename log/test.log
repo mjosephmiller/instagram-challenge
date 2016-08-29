@@ -701,3 +701,164 @@ Processing by PicturesController#index as HTML
 Completed 200 OK in 18ms (Views: 14.2ms | ActiveRecord: 1.8ms)
 Started GET "/pictures/26" for 127.0.0.1 at 2016-08-29 11:03:55 +0100
   [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (5.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (190.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "instagram_clone_test"[0m
+  [1m[35m (730.8ms)[0m  [1m[35mCREATE DATABASE "instagram_clone_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (24.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (185.4ms)[0m  [1m[35mCREATE TABLE "pictures" ("id" serial primary key, "caption" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "image_file_name" character varying, "image_content_type" character varying, "image_file_size" integer, "image_updated_at" timestamp)[0m
+  [1m[35m (35.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (76.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20160829132346')[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO schema_migrations (version) VALUES ('20160829131141');
+
+[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (17.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (17.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", 2016-08-29 15:13:26 UTC], ["updated_at", 2016-08-29 15:13:26 UTC]]
+  [1m[35m (15.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/pictures" for 127.0.0.1 at 2016-08-29 16:13:27 +0100
+Processing by PicturesController#index as HTML
+  Rendering pictures/index.html.haml within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  Rendered pictures/index.html.haml within layouts/application (105.3ms)
+Completed 200 OK in 868ms (Views: 743.2ms | ActiveRecord: 85.3ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (15.5ms)[0m  [1m[32mINSERT INTO "pictures" ("caption", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["caption", "real lies, real eyes, realize"], ["created_at", 2016-08-29 15:13:28 UTC], ["updated_at", 2016-08-29 15:13:28 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/pictures" for 127.0.0.1 at 2016-08-29 16:13:28 +0100
+Processing by PicturesController#index as HTML
+  Rendering pictures/index.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  [1m[36mPicture Load (0.3ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  Rendered pictures/index.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 21ms (Views: 18.1ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/pictures" for 127.0.0.1 at 2016-08-29 16:13:28 +0100
+Processing by PicturesController#index as HTML
+  Rendering pictures/index.html.haml within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  Rendered pictures/index.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 12ms (Views: 8.2ms | ActiveRecord: 0.3ms)
+Started GET "/pictures/new" for 127.0.0.1 at 2016-08-29 16:13:28 +0100
+Processing by PicturesController#new as HTML
+  Rendering pictures/new.html.haml within layouts/application
+  Rendered pictures/new.html.haml within layouts/application (31.5ms)
+Completed 200 OK in 41ms (Views: 37.2ms | ActiveRecord: 0.0ms)
+Started POST "/pictures" for 127.0.0.1 at 2016-08-29 16:13:28 +0100
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "picture"=>{"caption"=>"a little less conversation, a little more touch my body"}, "commit"=>"Create Picture"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "pictures" ("caption", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["caption", "a little less conversation, a little more touch my body"], ["created_at", 2016-08-29 15:13:28 UTC], ["updated_at", 2016-08-29 15:13:28 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/pictures
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+Started GET "/pictures" for 127.0.0.1 at 2016-08-29 16:13:28 +0100
+Processing by PicturesController#index as HTML
+  Rendering pictures/index.html.haml within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  Rendered pictures/index.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 11ms (Views: 8.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "pictures" ("caption", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["caption", "Live, Laugh, Love"], ["created_at", 2016-08-29 15:13:28 UTC], ["updated_at", 2016-08-29 15:13:28 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/pictures" for 127.0.0.1 at 2016-08-29 16:13:28 +0100
+Processing by PicturesController#index as HTML
+  Rendering pictures/index.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  [1m[36mPicture Load (0.3ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  Rendered pictures/index.html.haml within layouts/application (4.9ms)
+Completed 200 OK in 69ms (Views: 65.4ms | ActiveRecord: 0.7ms)
+Started GET "/pictures/3" for 127.0.0.1 at 2016-08-29 16:13:28 +0100
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering pictures/show.html.haml within layouts/application
+  Rendered pictures/show.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 20ms (Views: 9.3ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (6.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (11.0ms)[0m  [1m[35mBEGIN[0m
+Started GET "/pictures" for 127.0.0.1 at 2016-08-29 16:23:27 +0100
+Processing by PicturesController#index as HTML
+  Rendering pictures/index.html.haml within layouts/application
+  [1m[35m (11.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  Rendered pictures/index.html.haml within layouts/application (17.9ms)
+Completed 200 OK in 252ms (Views: 219.3ms | ActiveRecord: 12.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (26.9ms)[0m  [1m[32mINSERT INTO "pictures" ("caption", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["caption", "real lies, real eyes, realize"], ["created_at", 2016-08-29 15:23:27 UTC], ["updated_at", 2016-08-29 15:23:27 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/pictures" for 127.0.0.1 at 2016-08-29 16:23:27 +0100
+Processing by PicturesController#index as HTML
+  Rendering pictures/index.html.haml within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  Rendered pictures/index.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/pictures" for 127.0.0.1 at 2016-08-29 16:23:27 +0100
+Processing by PicturesController#index as HTML
+  Rendering pictures/index.html.haml within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  Rendered pictures/index.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.2ms)
+Started GET "/pictures/new" for 127.0.0.1 at 2016-08-29 16:23:27 +0100
+Processing by PicturesController#new as HTML
+  Rendering pictures/new.html.haml within layouts/application
+  Rendered pictures/new.html.haml within layouts/application (18.5ms)
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.0ms)
+Started POST "/pictures" for 127.0.0.1 at 2016-08-29 16:23:27 +0100
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "picture"=>{"caption"=>"a little less conversation, a little more touch my body"}, "commit"=>"Create Picture"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pictures" ("caption", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["caption", "a little less conversation, a little more touch my body"], ["created_at", 2016-08-29 15:23:27 UTC], ["updated_at", 2016-08-29 15:23:27 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/pictures
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/pictures" for 127.0.0.1 at 2016-08-29 16:23:27 +0100
+Processing by PicturesController#index as HTML
+  Rendering pictures/index.html.haml within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  Rendered pictures/index.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pictures" ("caption", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["caption", "Live, Laugh, Love"], ["created_at", 2016-08-29 15:23:27 UTC], ["updated_at", 2016-08-29 15:23:27 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/pictures" for 127.0.0.1 at 2016-08-29 16:23:27 +0100
+Processing by PicturesController#index as HTML
+  Rendering pictures/index.html.haml within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  Rendered pictures/index.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.5ms)
+Started GET "/pictures/6" for 127.0.0.1 at 2016-08-29 16:23:27 +0100
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering pictures/show.html.haml within layouts/application
+  Rendered pictures/show.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 12ms (Views: 5.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m

@@ -39,7 +39,7 @@ feature 'posts' do
       visit '/pictures'
       click_link 'Live, Laugh, Love'
       expect(page).to have_content 'Live, Laugh, Love'
-      expect(current_path).to eq "/restaurants/#{lll.id}"
+      expect(current_path).to eq "/pictures/#{lll.id}"
     end
 
   end
