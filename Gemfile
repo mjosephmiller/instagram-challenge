@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 group :test do
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'database_cleaner'
+
 end
 
 gem 'pry'

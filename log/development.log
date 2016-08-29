@@ -4526,3 +4526,388 @@ Processing by PicturesController#show as HTML
 Completed 200 OK in 185ms (Views: 172.9ms | ActiveRecord: 7.1ms)
 
 
+Started GET "/pictures/6" for ::1 at 2016-08-29 21:06:41 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (23.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPicture Load (23.8ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering pictures/show.html.haml within layouts/application
+  [1m[36mActsAsTaggableOn::Tagging Load (26.6ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 6], ["taggable_type", "Picture"]]
+  [1m[36mActsAsTaggableOn::Tag Load (18.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 6], ["taggable_type", "Picture"]]
+  [1m[35m (18.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."picture_id" = $1[0m  [["picture_id", 6]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = $1[0m  [["picture_id", 6]]
+  Rendered pictures/show.html.haml within layouts/application (124.6ms)
+Completed 200 OK in 511ms (Views: 307.4ms | ActiveRecord: 116.9ms)
+
+
+Started GET "/pictures/" for ::1 at 2016-08-29 21:06:49 +0100
+Processing by PicturesController#index as HTML
+  Rendering pictures/index.html.haml within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  [1m[36mPicture Load (0.3ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  Rendered pictures/index.html.haml within layouts/application (10.4ms)
+Completed 200 OK in 50ms (Views: 45.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pictures/new" for ::1 at 2016-08-29 21:06:52 +0100
+Processing by PicturesController#new as HTML
+  Rendering pictures/new.html.haml within layouts/application
+  Rendered pictures/new.html.haml within layouts/application (46.7ms)
+Completed 200 OK in 85ms (Views: 80.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/pictures" for ::1 at 2016-08-29 21:06:54 +0100
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pL5tUXBHF6gfBEkzIT7y9hGflpdoc0FEhWmCN1XVpajry4HWmOaAp+B8LIb4S8KFnrJhbJc8xSlOMllblEIlJQ==", "picture"=>{"caption"=>"", "tag_list"=>"", "location"=>""}, "commit"=>"Create Picture"}
+  [1m[35m (5.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (13.6ms)[0m  [1m[32mINSERT INTO "pictures" ("caption", "created_at", "updated_at", "location") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["caption", ""], ["created_at", 2016-08-29 20:06:54 UTC], ["updated_at", 2016-08-29 20:06:54 UTC], ["location", ""]]
+  [1m[36mActsAsTaggableOn::Tag Load (1.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 11], ["taggable_type", "Picture"]]
+  [1m[35m (11.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pictures
+Completed 302 Found in 51ms (ActiveRecord: 32.6ms)
+
+
+Started GET "/pictures" for ::1 at 2016-08-29 21:06:54 +0100
+Processing by PicturesController#index as HTML
+  Rendering pictures/index.html.haml within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  [1m[36mPicture Load (0.3ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  Rendered pictures/index.html.haml within layouts/application (8.7ms)
+Completed 200 OK in 44ms (Views: 39.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/pictures/11" for ::1 at 2016-08-29 21:07:00 +0100
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPicture Load (0.8ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering pictures/show.html.haml within layouts/application
+  [1m[36mActsAsTaggableOn::Tagging Load (1.2ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 11], ["taggable_type", "Picture"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 11], ["taggable_type", "Picture"]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."picture_id" = $1[0m  [["picture_id", 11]]
+  Rendered pictures/show.html.haml within layouts/application (24.8ms)
+Completed 200 OK in 63ms (Views: 52.3ms | ActiveRecord: 4.2ms)
+
+
+Started DELETE "/pictures/11" for ::1 at 2016-08-29 21:07:01 +0100
+Processing by PicturesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wnNuCEzCndDlPGx3otpzUajNq6eMfNORgWintjLhKxBczDQ4BckVKhW3xErOujRa9qOgj5E6G5w50QJ6OoeA0g==", "id"=>"11"}
+  [1m[36mPicture Load (0.3ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActsAsTaggableOn::Tagging Load (0.6ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2[0m  [["taggable_id", 11], ["taggable_type", "Picture"]]
+  [1m[36mActsAsTaggableOn::Tagging Load (1.3ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND "taggings"."context" = $3[0m  [["taggable_id", 11], ["taggable_type", "Picture"], ["context", "tags"]]
+  [1m[36mActsAsTaggableOn::Tagging Load (0.4ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND "taggings"."context" = $3[0m  [["taggable_id", 11], ["taggable_type", "Picture"], ["context", "skills"]]
+  [1m[36mActsAsTaggableOn::Tagging Load (0.4ms)[0m  [1m[34mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND "taggings"."context" = $3[0m  [["taggable_id", 11], ["taggable_type", "Picture"], ["context", "interests"]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."picture_id" = $1[0m  [["picture_id", 11]]
+  [1m[35mSQL (10.4ms)[0m  [1m[31mDELETE FROM "pictures" WHERE "pictures"."id" = $1[0m  [["id", 11]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pictures
+Completed 302 Found in 31ms (ActiveRecord: 14.5ms)
+
+
+Started GET "/pictures" for ::1 at 2016-08-29 21:07:01 +0100
+Processing by PicturesController#index as HTML
+  Rendering pictures/index.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  Rendered pictures/index.html.haml within layouts/application (8.5ms)
+Completed 200 OK in 37ms (Views: 33.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pictures" for ::1 at 2016-08-29 21:56:05 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PicturesController#index as HTML
+  Rendering pictures/index.html.haml within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  [1m[36mPicture Load (0.3ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  Rendered pictures/index.html.haml within layouts/application (49.9ms)
+Completed 200 OK in 629ms (Views: 511.7ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/pictures/new" for ::1 at 2016-08-29 21:56:12 +0100
+Processing by PicturesController#new as HTML
+  Rendering pictures/new.html.haml within layouts/application
+  Rendered pictures/new.html.haml within layouts/application (105.1ms)
+Completed 200 OK in 177ms (Views: 166.9ms | ActiveRecord: 7.4ms)
+
+
+Started POST "/pictures" for ::1 at 2016-08-29 21:56:14 +0100
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DrarUfJXiKmyrJfTeB+IbelDSuJxryAH39JjUpmdEu5Bw0fWGvYfpk3U8mahargeZm69GY7gpGoUibg+WAqSYw==", "picture"=>{"caption"=>"", "tag_list"=>"", "location"=>""}, "commit"=>"Create Picture"}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `file' for #<Picture:0x007fb21157e570>):
+  
+app/controllers/pictures_controller.rb:12:in `create'
+  Rendering /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (121.5ms)
+Started POST "/pictures" for ::1 at 2016-08-29 21:56:38 +0100
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vAHBLaz356a/mhazs9IyQ/SqKa33TS+wSjRJpst3DpUivpsd5fxvXE8Rvo7fsnVIqsQiheoL573yjexqwxGlVw==", "picture"=>{"caption"=>"sf", "tag_list"=>"", "location"=>""}, "commit"=>"Create Picture"}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `file' for #<Picture:0x007fb2126e18f8>):
+  
+app/controllers/pictures_controller.rb:12:in `create'
+  Rendering /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (95.0ms)
+Started POST "/pictures" for ::1 at 2016-08-29 21:56:54 +0100
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vAHBLaz356a/mhazs9IyQ/SqKa33TS+wSjRJpst3DpUivpsd5fxvXE8Rvo7fsnVIqsQiheoL573yjexqwxGlVw==", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fb21a0ae938 @tempfile=#<Tempfile:/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/RackMultipart20160829-39684-1lc3bd1.jpg>, @original_filename="FullSizeRender.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"FullSizeRender.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption"=>"sf", "tag_list"=>"", "location"=>""}, "commit"=>"Create Picture"}
+Command :: file -b --mime '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/4de9e522a37b655138d6e1985c38d14220160829-39684-1bzk7dg.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/4de9e522a37b655138d6e1985c38d14220160829-39684-1am7cx2.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/4de9e522a37b655138d6e1985c38d14220160829-39684-1am7cx2.jpg[0]'
+Command :: convert '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/4de9e522a37b655138d6e1985c38d14220160829-39684-1am7cx2.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/ca97459d3740e6a1cdbc1ca24652402620160829-39684-e1be9p'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/4de9e522a37b655138d6e1985c38d14220160829-39684-1am7cx2.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/4de9e522a37b655138d6e1985c38d14220160829-39684-1am7cx2.jpg[0]'
+Command :: convert '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/4de9e522a37b655138d6e1985c38d14220160829-39684-1am7cx2.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/ca97459d3740e6a1cdbc1ca24652402620160829-39684-rj5rlh'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/4de9e522a37b655138d6e1985c38d14220160829-39684-11m423i.jpg'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 423ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `file' for #<Picture:0x007fb21917ab10>):
+  
+app/controllers/pictures_controller.rb:12:in `create'
+  Rendering /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.7ms)
+  Rendering /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (108.4ms)
+Started GET "/pictures" for ::1 at 2016-08-29 21:57:03 +0100
+Processing by PicturesController#index as HTML
+  Rendering pictures/index.html.haml within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  [1m[36mPicture Load (0.5ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  Rendered pictures/index.html.haml within layouts/application (28.7ms)
+Completed 200 OK in 126ms (Views: 87.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/pictures/new" for ::1 at 2016-08-29 21:57:06 +0100
+Processing by PicturesController#new as HTML
+  Rendering pictures/new.html.haml within layouts/application
+  Rendered pictures/new.html.haml within layouts/application (28.5ms)
+Completed 200 OK in 88ms (Views: 77.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pictures" for ::1 at 2016-08-29 21:57:08 +0100
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ixxReJsCdTWRqAFtyESepAVHUQ2or/6PoHJ8t5GrMQTEab3/c6PiOm7QZNgRMa7Ximqm9lfgeuJrKafbUDyxiQ==", "picture"=>{"caption"=>"", "tag_list"=>"", "location"=>""}, "commit"=>"Create Picture"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.6ms)[0m  [1m[32mINSERT INTO "pictures" ("caption", "created_at", "updated_at", "location") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["caption", ""], ["created_at", 2016-08-29 20:57:08 UTC], ["updated_at", 2016-08-29 20:57:08 UTC], ["location", ""]]
+  [1m[36mActsAsTaggableOn::Tag Load (4.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 12], ["taggable_type", "Picture"]]
+  [1m[35m (12.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pictures
+Completed 302 Found in 82ms (ActiveRecord: 29.0ms)
+
+
+Started GET "/pictures" for ::1 at 2016-08-29 21:57:08 +0100
+Processing by PicturesController#index as HTML
+  Rendering pictures/index.html.haml within layouts/application
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  [1m[36mPicture Load (0.5ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  Rendered pictures/index.html.haml within layouts/application (18.3ms)
+Completed 200 OK in 95ms (Views: 83.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/pictures/new" for ::1 at 2016-08-29 21:58:33 +0100
+Processing by PicturesController#new as HTML
+  Rendering pictures/new.html.haml within layouts/application
+  Rendered pictures/new.html.haml within layouts/application (24.6ms)
+Completed 200 OK in 182ms (Views: 115.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pictures" for ::1 at 2016-08-29 21:58:35 +0100
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YmlIjBuGLMnehee+c7OenW3UxqCqcvHwEHPpLy1Wy4EtHKQL8ye7xiH9gguqxq7u4vkxW1U9dZ3bKDJD7MFLDA==", "picture"=>{"caption"=>"", "tag_list"=>"", "location"=>""}, "commit"=>"Create Picture"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.2ms)
+
+
+  
+NoMethodError (undefined method `attachment' for #<Picture:0x007fb21a337998>):
+  
+app/controllers/pictures_controller.rb:12:in `create'
+  Rendering /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (21.5ms)
+  Rendering /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (149.0ms)
+Started POST "/pictures" for ::1 at 2016-08-29 21:58:47 +0100
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BWsHPV+hUkbawdVuL5l+/3Mw7hNKEpnzRm5H0nvExleb1F0NFqravCpKfVND+Tn0LV7lO1dUUf7+1+Iec6JtlQ==", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fb212697848 @tempfile=#<Tempfile:/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/RackMultipart20160829-39684-y7qw0n.jpeg>, @original_filename="michael-miller-software-developer-makers-academy.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"michael-miller-software-developer-makers-academy.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "caption"=>"hello", "tag_list"=>"", "location"=>""}, "commit"=>"Create Picture"}
+Command :: file -b --mime '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39684-zhacm7.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39684-mzemq5.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39684-mzemq5.jpeg[0]'
+Command :: convert '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39684-mzemq5.jpeg[0]' -auto-orient -resize "300x300>" '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/738ea0cfe79b8f47b07d91d4e59be4af20160829-39684-18f9udd'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39684-mzemq5.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39684-mzemq5.jpeg[0]'
+Command :: convert '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39684-mzemq5.jpeg[0]' -auto-orient -resize "100x100>" '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/738ea0cfe79b8f47b07d91d4e59be4af20160829-39684-1h1p0m7'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39684-w6e2wp.jpeg'
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 2356ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `attachment' for #<Picture:0x007fb218891d00>):
+  
+app/controllers/pictures_controller.rb:12:in `create'
+  Rendering /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.4ms)
+  Rendering /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/michaelmiller/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (114.1ms)
+Started POST "/pictures" for ::1 at 2016-08-29 21:59:45 +0100
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BWsHPV+hUkbawdVuL5l+/3Mw7hNKEpnzRm5H0nvExleb1F0NFqravCpKfVND+Tn0LV7lO1dUUf7+1+Iec6JtlQ==", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fb211f57970 @tempfile=#<Tempfile:/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/RackMultipart20160829-39684-vflf2e.jpeg>, @original_filename="michael-miller-software-developer-makers-academy.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"michael-miller-software-developer-makers-academy.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "caption"=>"hello", "tag_list"=>"", "location"=>""}, "commit"=>"Create Picture"}
+Command :: file -b --mime '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39684-su62tq.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39684-12ajkda.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39684-12ajkda.jpeg[0]'
+Command :: convert '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39684-12ajkda.jpeg[0]' -auto-orient -resize "300x300>" '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6a0a049c39dd99b8b2c29c3bbe0fa6d920160829-39684-1h3tp8o'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39684-12ajkda.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39684-12ajkda.jpeg[0]'
+Command :: convert '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39684-12ajkda.jpeg[0]' -auto-orient -resize "100x100>" '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6a0a049c39dd99b8b2c29c3bbe0fa6d920160829-39684-exxq6l'
+  [1m[35m (17.1ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39684-q7dxxd.jpeg'
+  [1m[35mSQL (37.0ms)[0m  [1m[32mINSERT INTO "pictures" ("caption", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "location") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["caption", "hello"], ["created_at", 2016-08-29 20:59:47 UTC], ["updated_at", 2016-08-29 20:59:47 UTC], ["image_file_name", "michael-miller-software-developer-makers-academy.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 2043658], ["image_updated_at", 2016-08-29 20:59:45 UTC], ["location", ""]]
+  [1m[36mActsAsTaggableOn::Tag Load (109.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 13], ["taggable_type", "Picture"]]
+  [1m[35m (88.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pictures
+Completed 302 Found in 2613ms (ActiveRecord: 251.9ms)
+
+
+Started GET "/pictures" for ::1 at 2016-08-29 21:59:48 +0100
+Processing by PicturesController#index as HTML
+  Rendering pictures/index.html.haml within layouts/application
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  Rendered pictures/index.html.haml within layouts/application (16.2ms)
+Completed 200 OK in 89ms (Views: 83.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/pictures" for ::1 at 2016-08-29 21:59:49 +0100
+Processing by PicturesController#index as HTML
+  Rendering pictures/index.html.haml within layouts/application
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  [1m[36mPicture Load (2.6ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  Rendered pictures/index.html.haml within layouts/application (22.8ms)
+Completed 200 OK in 103ms (Views: 93.5ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/pictures/new" for ::1 at 2016-08-29 21:59:52 +0100
+Processing by PicturesController#new as HTML
+  Rendering pictures/new.html.haml within layouts/application
+  Rendered pictures/new.html.haml within layouts/application (22.5ms)
+Completed 200 OK in 98ms (Views: 90.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pictures" for ::1 at 2016-08-29 22:00:04 +0100
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+A8y4pgrkP4wcCXY+FhAKP54ZZmn3ZGx3KEa8fMqLB23et5lcIoH8c8IQG0hLXBbcVWSYliSFdwX+sGdMr2skA==", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fb215080f60 @tempfile=#<Tempfile:/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/RackMultipart20160829-39684-119kzgz.jpg>, @original_filename="FullSizeRender.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"FullSizeRender.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption"=>"cool", "tag_list"=>"", "location"=>""}, "commit"=>"Create Picture"}
+Command :: file -b --mime '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/4de9e522a37b655138d6e1985c38d14220160829-39684-sld8f.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/4de9e522a37b655138d6e1985c38d14220160829-39684-1baxmvi.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/4de9e522a37b655138d6e1985c38d14220160829-39684-1baxmvi.jpg[0]'
+Command :: convert '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/4de9e522a37b655138d6e1985c38d14220160829-39684-1baxmvi.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/fb52aef789d0743b65870a3bd760cc2a20160829-39684-6r9vzb'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/4de9e522a37b655138d6e1985c38d14220160829-39684-1baxmvi.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/4de9e522a37b655138d6e1985c38d14220160829-39684-1baxmvi.jpg[0]'
+Command :: convert '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/4de9e522a37b655138d6e1985c38d14220160829-39684-1baxmvi.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/fb52aef789d0743b65870a3bd760cc2a20160829-39684-157pnaf'
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/4de9e522a37b655138d6e1985c38d14220160829-39684-rzzxad.jpg'
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pictures" ("caption", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "location") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["caption", "cool"], ["created_at", 2016-08-29 21:00:04 UTC], ["updated_at", 2016-08-29 21:00:04 UTC], ["image_file_name", "FullSizeRender.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 72096], ["image_updated_at", 2016-08-29 21:00:04 UTC], ["location", ""]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 14], ["taggable_type", "Picture"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pictures
+Completed 302 Found in 411ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/pictures" for ::1 at 2016-08-29 22:00:04 +0100
+Processing by PicturesController#index as HTML
+  Rendering pictures/index.html.haml within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  Rendered pictures/index.html.haml within layouts/application (19.0ms)
+Completed 200 OK in 315ms (Views: 310.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pictures/new" for ::1 at 2016-08-29 22:09:43 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PicturesController#new as HTML
+  Rendering pictures/new.html.haml within layouts/application
+  Rendered pictures/new.html.haml within layouts/application (91.2ms)
+Completed 200 OK in 755ms (Views: 588.4ms | ActiveRecord: 11.3ms)
+
+
+Started POST "/pictures" for ::1 at 2016-08-29 22:09:54 +0100
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7NN/U0YkcfOV/hP1P2R7IJ0WUErxNFPPpzDiQa/KI5FybCVjDy/5CWV1u8hTBDwrw3hbYuxym8IfiUeNp6yIUw==", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fd894f734c8 @tempfile=#<Tempfile:/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/RackMultipart20160829-39933-edwica.jpeg>, @original_filename="michael-miller-software-developer-makers-academy.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"michael-miller-software-developer-makers-academy.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "caption"=>"frei", "tag_list"=>"", "location"=>""}, "commit"=>"Create Picture"}
+Command :: file -b --mime '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39933-b06az5.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39933-1cv0k32.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39933-1cv0k32.jpeg[0]'
+Command :: convert '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39933-1cv0k32.jpeg[0]' -auto-orient -resize "300x300>" '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/4f564a9f833e3c183a01c02af74e147a20160829-39933-1krzpyc'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39933-1cv0k32.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39933-1cv0k32.jpeg[0]'
+Command :: convert '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39933-1cv0k32.jpeg[0]' -auto-orient -resize "100x100>" '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/4f564a9f833e3c183a01c02af74e147a20160829-39933-1ekct9v'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/28/4c9_ht2d06q8vk4tmdn5fqdr0000gn/T/6ec2ba3c80b3fe54eda41cc07447693d20160829-39933-mg0pq5.jpeg'
+  [1m[35mSQL (8.0ms)[0m  [1m[32mINSERT INTO "pictures" ("caption", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "location") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["caption", "frei"], ["created_at", 2016-08-29 21:09:57 UTC], ["updated_at", 2016-08-29 21:09:57 UTC], ["image_file_name", "michael-miller-software-developer-makers-academy.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 2043658], ["image_updated_at", 2016-08-29 21:09:54 UTC], ["location", ""]]
+  [1m[36mActsAsTaggableOn::Tag Load (1.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = $1 AND "taggings"."taggable_type" = $2 AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m  [["taggable_id", 15], ["taggable_type", "Picture"]]
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pictures
+Completed 302 Found in 3159ms (ActiveRecord: 18.8ms)
+
+
+Started GET "/pictures" for ::1 at 2016-08-29 22:09:57 +0100
+Processing by PicturesController#index as HTML
+  Rendering pictures/index.html.haml within layouts/application
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures"[0m
+  [1m[36mPicture Load (0.4ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  Rendered pictures/index.html.haml within layouts/application (30.4ms)
+Completed 200 OK in 97ms (Views: 86.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/pictures/new" for ::1 at 2016-08-29 22:10:02 +0100
+Processing by PicturesController#new as HTML
+  Rendering pictures/new.html.haml within layouts/application
+  Rendered pictures/new.html.haml within layouts/application (28.1ms)
+Completed 200 OK in 101ms (Views: 98.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pictures/new" for ::1 at 2016-08-29 22:34:19 +0100
+Processing by PicturesController#new as HTML
+  Rendering pictures/new.html.haml within layouts/application
+  Rendered pictures/new.html.haml within layouts/application (14.1ms)
+Completed 200 OK in 98ms (Views: 55.5ms | ActiveRecord: 6.7ms)
+
+
