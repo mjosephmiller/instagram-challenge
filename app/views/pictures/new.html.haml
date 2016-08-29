@@ -1,0 +1,9 @@
+= form_for @picture, html: {multipart: true} do |f|
+  = f.file_field :image
+  = f.label :caption
+  = f.text_field :caption
+  -# = f.label :tags
+  -# = f.text_field :tags
+  -# = f.label :location
+  -# = f.text_field :location
+  = f.submit

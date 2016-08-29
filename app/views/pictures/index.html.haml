@@ -1,0 +1,7 @@
+- if @pictures.any?
+  - @pictures.each do |picture|
+    = link_to picture.caption, picture_path(picture)
+- else
+  %h1 No pictures have been posted. Why not be the first?
+
+%a(href='/pictures/new') POST A PICTURE
